@@ -4,6 +4,10 @@ TeamDashboard::Application.routes.draw do
     resources :dashboards do
       resources :widgets
     end
+    
+    resources :datarows do
+      resources :points
+    end
 
     resource :system
 
@@ -13,6 +17,8 @@ TeamDashboard::Application.routes.draw do
 
   get "dashboards"     => "layout#index"
   get "dashboards/:id" => "layout#index"
+  get "datarows"       => "layout#index"
+  get "datarows/:id"   => "layout#index"
   get "about"          => "layout#index"
 
   root :to => 'layout#index'

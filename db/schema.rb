@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130720154824) do
+ActiveRecord::Schema.define(version: 20131209143735) do
 
   create_table "dashboards", force: true do |t|
     t.string   "name"
@@ -21,6 +21,22 @@ ActiveRecord::Schema.define(version: 20130720154824) do
     t.datetime "updated_at"
     t.boolean  "locked",     default: false
   end
+
+  create_table "datarows", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "points", force: true do |t|
+    t.datetime "x"
+    t.float    "y"
+    t.integer  "datarow_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "points", ["datarow_id"], name: "index_points_on_datarow_id"
 
   create_table "widgets", force: true do |t|
     t.string   "name"

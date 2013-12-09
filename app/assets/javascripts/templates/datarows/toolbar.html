@@ -1,0 +1,17 @@
+<div class="btn-toolbar">
+
+  <div class="btn-group">
+    <h2 contenteditable on-change="save()" ng-model="datarow.title" title="Click to edit title" id='heading' style="display:inline">{{datarow.title}}</h2>
+  </div>
+
+  <div class="pull-right" ng-hide="fullscreen">
+
+    <div class="btn-group">
+      <button ng-click="deleteDatarow()" class="btn btn-warning">
+        <i class="icon-trash icon-white"></i>
+      </button>
+    </div>
+
+  </div>
+
+ </div>

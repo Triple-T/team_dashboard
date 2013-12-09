@@ -5,6 +5,8 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
   $routeProvider
     .when("/dashboards", { templateUrl: 'templates/dashboards/index.html', controller: "DashboardIndexCtrl" })
     .when("/dashboards/:id", { templateUrl: 'templates/dashboards/show.html.erb', controller: "DashboardShowCtrl" })
+    .when("/datarows", { templateUrl: 'templates/datarows/index.html', controller: "DatarowIndexCtrl" })
+    .when("/datarows/:id", { templateUrl: 'templates/datarows/show.html.erb', controller: "DatarowShowCtrl" })
     .when("/about", { templateUrl: 'templates/abouts/show.html', controller: "AboutCtrl" })
     .otherwise({ redirectTo: "/dashboards" });
 }]);

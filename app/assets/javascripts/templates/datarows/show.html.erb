@@ -1,0 +1,18 @@
+<ng-include src="'<%= asset_path('templates/datarows/toolbar.html') %>'"></ng-include>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="point in points | filter: nameFilter">
+  	<tr>
+      <td>{{ point.x }}</td>
+      <td>{{ point.y }}</td>
+  	</tr>
+  </tbody>
+</table>
+
+</div>
