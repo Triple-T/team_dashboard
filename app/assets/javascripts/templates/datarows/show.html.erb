@@ -7,9 +7,9 @@
       <th>Value</th>
     </tr>
   </thead>
-  <tbody ng-repeat="point in points">
+  <tbody ng-repeat="point in points | orderBy:'x'">
   	<tr>
-      <td>{{ point.x | date: 'medium' }}</td>
+      <td><input type="text" ng-change="updatePoint(point)" ng-model="point.x" data-date-format="M dd, yyyy" bs-datepicker readonly class="datepicker"/></td>
       <td><div contenteditable on-change="updatePoint(point)" ng-model="point.y" style="display: inline">{{ point.y }}</div></td>
   	</tr>
   </tbody>

@@ -8,6 +8,7 @@ gem "activeresource", "~> 4.0.0"
 gem "sass-rails", "~> 4.0.0"
 gem "bootstrap-sass", "~> 2.3.2"
 gem "bootswatch-rails"
+gem "angularstrap-rails"
 
 gem "mysql2"
 

@@ -17,6 +17,7 @@
 //= require jquery_ujs
 //= require jquery.gridster
 
+//= require bootstrap-datepicker
 //= require bootstrap-dropdown
 //= require bootstrap-typeahead
 //= require bootstrap-modal
@@ -34,6 +35,7 @@
 //= require angular-route
 //= require angular-resource
 //= require angular-sanitize
+//= require angular-strap
 
 //= require ui-bootstrap-custom-0.5.0
 

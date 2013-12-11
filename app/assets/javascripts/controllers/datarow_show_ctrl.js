@@ -1,19 +1,15 @@
 app.controller("DatarowShowCtrl", ["$scope", "$rootScope", "$routeParams", "$location", "$q", "$dialog", "$window", "Datarow", "Point", function($scope, $rootScope, $routeParams, $location, $q, $dialog, $window, Datarow, Point) {
 
-  var resources = [
-    Datarow.get({ id: $routeParams.id }),
-    Point.query({ datarow_id: $routeParams.id })
-  ];
-
-  function handleResults(results) {
-    $scope.datarow = results[0];
-    $scope.points = results[1];
-    $rootScope.resolved = true;
-  }
-
-  $rootScope.resolved = false;
-  $q.all(resources).then(handleResults);
-
+  $scope.datarow = Datarow.get({ id: $routeParams.id }, function() {
+    var points = Point.query({ datarow_id: $routeParams.id }, function() {
+      $scope.points = points.map(function(val) {
+      	val.x = new Date(val.x);
+  		return val;
+  	  });
+  	  $rootScope.resolved = true;
+    });
+  });
+  
   function saveDatarowChanges() {
     $scope.datarow.$update();
   }
@@ -39,5 +35,5 @@ app.controller("DatarowShowCtrl", ["$scope", "$rootScope", "$routeParams", "$loc
   $scope.updatePoint = function(point) {
     point.$update();
   };
-
+  
 }]);

@@ -10,6 +10,7 @@
  *
 
  *= require jquery.gridster
+ *= require bootstrap-datepicker
  *= require_tree ./widgets
  *= require_self
 
@@ -350,4 +351,10 @@ ul.selectable-list {
 
 .search-box {
   margin-right: 10px;
+}
+
+input.datepicker {
+  margin-bottom: 0px;
+  color: #ccc;
+  background-color: rgba(100, 100, 100, 0.1);
 }

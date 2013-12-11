@@ -29,6 +29,7 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    angularstrap-rails (0.7.6)
     arel (4.0.1)
     atomic (1.1.14)
     better_errors (1.0.1)
@@ -157,6 +158,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeresource (~> 4.0.0)
+  angularstrap-rails
   better_errors
   binding_of_caller
   bootstrap-sass (~> 2.3.2)

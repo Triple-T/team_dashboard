@@ -1,4 +1,4 @@
-var app = angular.module("TeamDashboard", ["ngResource", "ngSanitize", "ngRoute", "ui.bootstrap"]);
+var app = angular.module("TeamDashboard", ["ngResource", "ngSanitize", "ngRoute", "ui.bootstrap", "$strap.directives"]);
 
 app.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
