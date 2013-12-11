@@ -1,18 +1,40 @@
 <ng-include src="'<%= asset_path('templates/datarows/toolbar.html') %>'"></ng-include>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody ng-repeat="point in points | orderBy:'x'">
-  	<tr>
-      <td><input type="text" ng-change="updatePoint(point)" ng-model="point.x" data-date-format="M dd, yyyy" bs-datepicker readonly class="datepicker"/></td>
-      <td><div contenteditable on-change="updatePoint(point)" ng-model="point.y" style="display: inline">{{ point.y }}</div></td>
-  	</tr>
-  </tbody>
+<table class="table table-striped span4">
+	<thead>
+		<tr>
+			<th style="width: 30%">Date</th>
+			<th style="width: 60%">Value</th>
+			<th style="width: 10%"></th>
+		</tr>
+	</thead>
+	<tbody ng-repeat="point in points | orderBy:'x'">
+		<tr>
+			<td>
+			<input type="text" ng-change="updatePoint(point)" ng-model="point.x" data-date-format="M dd, yyyy" data-end-date="{{ today }}" bs-datepicker readonly class="input-small datepicker"/>
+			</td>
+			<td>
+			<div contenteditable on-change="updatePoint(point)" ng-model="point.y" class="editable">
+				{{ point.y }}
+			</div></td>
+			<td>
+			<div class="pull-right">
+				<button ng-click="deletePoint(point)" class="btn">
+					<i class="icon-trash icon-white"></i>
+				</button>
+			</div></td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td>
+			<button ng-click="addPoint()" class="btn btn-success">
+				<i class="icon-plus icon-white"></i> Add Point
+			</button></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
 </table>
 
 </div>

@@ -358,3 +358,15 @@ input.datepicker {
   color: #ccc;
   background-color: rgba(100, 100, 100, 0.1);
 }
+
+.editable {
+  padding: 7px;
+}
+
+.editable:hover, .editable:focus {
+  margin-left: 0px;
+}
+
+.editable:hover:after {
+  margin-top: 0px;
+}
