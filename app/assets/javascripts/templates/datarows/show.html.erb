@@ -7,10 +7,10 @@
       <th>Value</th>
     </tr>
   </thead>
-  <tbody ng-repeat="point in points | filter: nameFilter">
+  <tbody ng-repeat="point in points">
   	<tr>
-      <td>{{ point.x }}</td>
-      <td>{{ point.y }}</td>
+      <td>{{ point.x | date: 'medium' }}</td>
+      <td><div contenteditable on-change="updatePoint(point)" ng-model="point.y" style="display: inline">{{ point.y }}</div></td>
   	</tr>
   </tbody>
 </table>

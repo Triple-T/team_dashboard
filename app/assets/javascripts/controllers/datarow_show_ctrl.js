@@ -35,5 +35,9 @@ app.controller("DatarowShowCtrl", ["$scope", "$rootScope", "$routeParams", "$loc
   $scope.save = function() {
     saveDatarowChanges();
   };
+  
+  $scope.updatePoint = function(point) {
+    point.$update();
+  };
 
 }]);
